@@ -1,0 +1,72 @@
+[
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_1"
+  },
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_2"
+  },
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_3"
+  },
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_4"
+  },
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_5"
+  },
+  {
+    "label": "M3 bolts to motor arm",
+    "source": "hex_frame",
+    "target": "brushless_motor_6"
+  },
+  {
+    "label": "Zip-tied to motor arm",
+    "source": "brushless_motor_1",
+    "target": "esc_1"
+  },
+  {
+    "label": "Rail mount bracket",
+    "source": "hex_frame",
+    "target": "camera_gimbal"
+  },
+  {
+    "label": "1/4-20 mounting screw",
+    "source": "camera_gimbal",
+    "target": "multispectral_cam"
+  },
+  {
+    "label": "Nylon standoffs",
+    "source": "hex_frame",
+    "target": "jetson_mount"
+  },
+  {
+    "label": "M2.5 mounting screws",
+    "source": "jetson_mount",
+    "target": "companion_computer"
+  },
+  {
+    "label": "Clamped to top plate",
+    "source": "hex_frame",
+    "target": "gps_mast"
+  },
+  {
+    "label": "Adhesive pad",
+    "source": "gps_mast",
+    "target": "gps_rtk"
+  },
+  {
+    "label": "Prop adapter bolts",
+    "source": "brushless_motor_1",
+    "target": "propellers"
+  }
+]

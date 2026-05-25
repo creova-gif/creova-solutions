@@ -1,0 +1,962 @@
+{
+  "plan": "- Use an ESP32-S3 or Raspberry Pi 4 for processing sensor data and managing wireless communication.\n- Integrate an AMG8833 or FLIR Lepton thermal camera for heat signature detection on high-voltage equipment.\n- Implement a high-torque DC geared motor drivetrain with rugged off-road wheels for navigating rough corridor terrain.\n- Utilize a 4S LiFePO4 battery pack with a high-efficiency buck converter for long-endurance autonomous operation.\n- Construct a frame using aluminum T-slot extrusions and 3D-printed PETG mounts for internal electronics.\n- Design a custom IP65-rated 3D-printed enclosure to protect the thermal camera and MCU from outdoor environmental conditions.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "5V",
+        "GND",
+        "SDA",
+        "SCL",
+        "TXD",
+        "RXD",
+        "GPIO18",
+        "GPIO19"
+      ],
+      "type": "mcu",
+      "partId": "0eadbfad-70e2-4907-948c-e4dae67aae5d",
+      "category": "electrical",
+      "imageUrl": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/337/RASPBERRY-PI-4B-4GB.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "USB",
+            "value": "USB 2.0 (2), USB 3.0 (2)"
+          },
+          {
+            "label": "pins",
+            "value": "5V,3.3V,GND,GPIO2,GPIO3,GPIO4,GPIO5,GPIO6,GPIO7,GPIO8,GPIO9,GPIO10,GPIO11,GPIO12,GPIO13,GPIO14,GPIO15,GPIO16,GPIO17,GPIO18,GPIO19,GPIO20,GPIO21,GPIO22,GPIO23,GPIO24,GPIO25,GPIO26,GPIO27"
+          },
+          {
+            "label": "Speed",
+            "value": "1.5GHz"
+          },
+          {
+            "label": "Contents",
+            "value": "-"
+          },
+          {
+            "label": "Ethernet",
+            "value": "GbE"
+          },
+          {
+            "label": "Form Factor",
+            "value": "-"
+          },
+          {
+            "label": "Cooling Type",
+            "value": "-"
+          },
+          {
+            "label": "Power (Watts)",
+            "value": "-"
+          },
+          {
+            "label": "Video Outputs",
+            "value": "CSI, DSI, HDMI"
+          },
+          {
+            "label": "Core Processor",
+            "value": "Broadcom BCM2711 ARM Cortex-A72"
+          },
+          {
+            "label": "Watchdog Timer",
+            "value": "-"
+          },
+          {
+            "label": "Number of Cores",
+            "value": "4"
+          },
+          {
+            "label": "Size / Dimension",
+            "value": "3.346\" x 2.205\" (85.00mm x 56.00mm)"
+          },
+          {
+            "label": "Digital I/O Lines",
+            "value": "40"
+          },
+          {
+            "label": "Storage Interface",
+            "value": "MicroSD"
+          },
+          {
+            "label": "Expansion Site/Bus",
+            "value": "-"
+          },
+          {
+            "label": "Analog Input:Output",
+            "value": "-"
+          },
+          {
+            "label": "Operating Temperature",
+            "value": "0°C ~ 50°C"
+          },
+          {
+            "label": "RAM Capacity/Installed",
+            "value": "4GB/4GB"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/4027",
+            "price": "$25",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/raspberry-pi/SC0194-9/10258781",
+            "price": "$100",
+            "vendor": "DigiKey"
+          }
+        ],
+        "datasheetUrl": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7844/SC0192%289%29.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07V5JTMV9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": 0,
+        "y": 100,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "description": "High-performance processor required for handling VGA thermal video stream and cellular data.",
+      "productName": "Raspberry Pi 4 Model B (4GB)",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/raspberry-pi/RASPBERRY-PI-4-MODEL-B-4GB/10258745",
+      "estimatedCost": 55,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwo4zRYEy8cgdMy9eZbTv6Y0CbEBtu2Pd1pSrxS4PpGfQcAvWie09RqrJOsTPRzQ5kwFw5O70L5cfLplHxdQdGGHGbBsoITjIqRC6MvOxaziElkpAffXnIIS5hgbZz64WIazid05uESyzEb1kYziz5G4AmhSJ55qegmlNdBoMcU93CoCPMIMw8r5vaVlcxguXbSc6J1i6L5fb9A6Hn0AVHfzC78p1rmuqURAQm4dAXqXxz9af6TRcHF68FIMOyrWi01Ylx6Up2ej6QxZLywHfUS7Ue5hjpwM3JKmBM4skVfw4orJY6XrHkbe31kpboeVzqVMYNrSERCUFZgAIHM4TOP7dtoI4RiTV59XCGtxAxU5KmbQOM0wBiauCqo0R5hWEbb3WqrEDVCt4yBQVh5IvNLIO8aqoMtxL3GSaGbexoKoKR9d9HBadXNdLchfSoN02FvUgNEK8AyPn4NWg5M6HVF4hU9L9bvvGIXGbtou4AYx7OLG3dGy5EJq9XKfVGqwPMTNoffY9PMr2p8tqzkxsiv9RuRQ0xU3146TIPxQXjtmI9Xl2SZZYuMa4zfiC003ijbDO2eXWvN9VwMkgrNkEPaFAbpuYjGPKHiq3xQGPLnHwRg7AmfvHIGe6sacFhZZHy6sS2TLPn7yv71PqC0PxNxz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+4+Model+B+%284GB%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "thermal_camera",
+      "name": "High-Res Thermal Imager",
+      "pins": [
+        "VCC",
+        "GND",
+        "USB_DPLUS",
+        "USB_DMINUS"
+      ],
+      "type": "sensor",
+      "partId": "1c7e0010-3d5f-4c3b-9dad-2a0e0de6e973",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "21x21x11mm",
+      "position3d": {
+        "x": 0,
+        "y": 120,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 11,
+        "width": 21,
+        "height": 21
+      },
+      "description": "640x512 VGA resolution radiometric thermal camera for legal-grade fault inspection.",
+      "productName": "FLIR Boson 640 Radiometric",
+      "purchaseUrl": "https://www.flir.com/products/boson/",
+      "estimatedCost": 2800,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=FLIR+Boson+640+Radiometric&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cellular_modem",
+      "name": "5G Communications Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "USB_CONN"
+      ],
+      "type": "module",
+      "partId": "b00c7105-1e36-4579-8176-ee3f490f3646",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "60x30x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 110,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 60,
+        "height": 5
+      },
+      "description": "High-speed 5G module for real-time video transmission in remote corridors.",
+      "productName": "Sixfab 5G Modem Kit",
+      "purchaseUrl": "https://sixfab.com/product/raspberry-pi-5g-modem-kit/",
+      "estimatedCost": 350,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sixfab+5G+Modem+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_driver",
+      "name": "Dual Motor Controller",
+      "pins": [
+        "BATT_POS",
+        "BATT_NEG",
+        "M1A",
+        "M1B",
+        "M2A",
+        "M2B",
+        "S1",
+        "S2"
+      ],
+      "type": "module",
+      "partId": "ac66bf74-18a6-49ed-bcf0-99d0f894b7c9",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "70x60x25mm",
+      "position3d": {
+        "x": -40,
+        "y": 100,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 70,
+        "height": 25
+      },
+      "description": "High-current motor driver for heavy-duty differential drive system.",
+      "productName": "Sabertooth 2x32",
+      "purchaseUrl": "https://www.dimensionengineering.com/products/sabertooth2x32",
+      "estimatedCost": 125,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sabertooth+2x32&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "left_motor",
+      "name": "Left Drive Motor",
+      "pins": [
+        "POS",
+        "NEG"
+      ],
+      "type": "actuator",
+      "partId": "dd6029a6-d4d7-42c5-9d84-77bb9734d59d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/pcaBBTGJ8rGyCy8jvZLIuE-mIR6yHSClwz_iUpdWp5o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cm9ib3RzaG9wLmNv/bS9jZG4vc2hvcC9m/aWxlcy81MjAzLXNl/cmllcy15ZWxsb3ct/amFja2V0LXBsYW5l/dGFyeS1nZWFyLW1v/dG9yLTUyMS0xMTUw/LXJwbS0zMy01di1l/bmNvZGVyLndlYnA_/dj0xNzIwNTIyMjQ2/JndpZHRoPTEwMjQ",
+      "quantity": 1,
+      "dimensions": "37x37x90mm",
+      "position3d": {
+        "x": -130,
+        "y": 60,
+        "z": 80
+      },
+      "boundingBox": {
+        "depth": 37,
+        "width": 90,
+        "height": 37
+      },
+      "description": "High-torque planetary gear motor for service road navigation.",
+      "productName": "GoBILDA 5203 Series Yellow Jacket",
+      "purchaseUrl": "https://www.gobilda.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-312-rpm-3-3-5v-encoder/",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GoBILDA+5203+Series+Yellow+Jacket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "right_motor",
+      "name": "Right Drive Motor",
+      "pins": [
+        "POS",
+        "NEG"
+      ],
+      "type": "actuator",
+      "partId": "dd6029a6-d4d7-42c5-9d84-77bb9734d59d",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "37x37x90mm",
+      "position3d": {
+        "x": 130,
+        "y": 60,
+        "z": 80
+      },
+      "boundingBox": {
+        "depth": 37,
+        "width": 90,
+        "height": 37
+      },
+      "description": "High-torque planetary gear motor for service road navigation.",
+      "productName": "GoBILDA 5203 Series Yellow Jacket",
+      "purchaseUrl": "https://www.gobilda.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-312-rpm-3-3-5v-encoder/",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GoBILDA+5203+Series+Yellow+Jacket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_pack",
+      "name": "Main Power Source",
+      "pins": [
+        "POS",
+        "NEG"
+      ],
+      "type": "power",
+      "partId": "0124eec0-06bb-41c7-8993-0984604f8620",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/LV0yFU5TnHRbJ7u11IXyxuD7gImWosvFGSf8s6tR0H4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFrZXJmb2N1cy5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvbWFr/ZXJmb2N1czMuN3Yx/MDAwMG1BaEJhdHRl/cnlfM19sYXJnZS5q/cGc_dj0xNjM3NzQ4/ODc1",
+      "quantity": 1,
+      "dimensions": "150x100x95mm",
+      "position3d": {
+        "x": 0,
+        "y": 127,
+        "z": -80
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 150,
+        "height": 95
+      },
+      "description": "4S LiFePO4 pack for high capacity and long-duration autonomous missions.",
+      "productName": "Bioenno 12V 20Ah LiFePO4",
+      "purchaseUrl": "https://www.bioennopower.com/products/12v-20ah-lfp-battery",
+      "estimatedCost": 220,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Bioenno+12V+20Ah+LiFePO4&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter_5v",
+      "name": "MCU Power Regulator",
+      "pins": [
+        "VIN",
+        "GND",
+        "VOUT",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "396f7d59-d2fb-4a3c-833b-986e2d48ea05",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "45x30x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 100,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 45,
+        "height": 15
+      },
+      "description": "High-efficiency buck converter for stable Raspberry Pi power.",
+      "productName": "SD200-5 Step Down",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+to+5V+5A+buck+converter",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SD200-5+Step+Down&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_chassis_rails",
+      "name": "Chassis Frame Rail",
+      "type": "structural",
+      "partId": "a7bff9dd-5898-4609-9710-84a555a80daf",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/spZaPNTGNpqTgbdHNNnJBR9FO4ZoUmnkV1xUia58Vag/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxM2RQU3Y4MmNM/LmpwZw",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0C7H6VXNX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x300mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 300,
+        "width": 300,
+        "height": 20
+      },
+      "description": "Main structural frame for the differential drive chassis.",
+      "productName": "2020 V-Slot Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+v-slot+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwopfCT660YBYMBio063OblnhOzNmKBmF5e6q3mk2pug5EGvHAZkIF5L116wFBF8pii0mmowNDfJKur0oUIwSGwJCsT6FHFmadvNOqimH9b49n3ROKjLhlppvlzTjLnoh1NBu3Pv9wNF4GqZrU2fQH7Na8yNIwzZ75CU5qfRARkzpopm3xia0NxWRCxZ6vi19tuSv5QikaMyGcYU1NSnEppVDDn8Up2UJwt9KRfKZYSvU4eBc1ykWZUVFDw5Y3RwN8j8bbLzhqH2yYgGHCHondnABlkHtn5EjWcBwOvTkqbDPUhpm9mLuKPtql7bIIwD1rDiXNk1qqkQo4MumpaIi6Pz7RRTngs9qOzapk7AtwLpWEhZK1tPniwNM5SqBdfjgA5x4qLA9BxmabSIWKtNUpC0DDAYf44AaQ4VPi5r7lYYdtViuiDyABudszXfEhs4PJ2ddnAThTi0plx1DB43S9e5nEP4dqB8TwbJdLA1YguUwgRGlD27WQvGmKS1SBzbluaqfZ5dYvAAvrPxX1YmtqLVZUcY7Y4OLvQaJ8PYYNpfiq9k4hHWSUPRedqcutHarg7YBnKfsGJGmN8TwnE3rTs4hSfXefZoTzl4xYJ3P0TzTUjqschFW51ciqsr2X7HDI4jHlG2XxNgRupkypcYG4wr",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+V-Slot+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "drive_wheels",
+      "name": "Drive Wheel",
+      "type": "mechanism",
+      "partId": "4b3b546f-c870-460f-8a93-5ac1035f5289",
+      "category": "mechanical",
+      "quantity": 2,
+      "dimensions": "120x120x45mm",
+      "position3d": {
+        "x": 0,
+        "y": 60,
+        "z": 80
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 400,
+        "height": 120
+      },
+      "description": "High-traction wheels for service road asphalt and light gravel.",
+      "productName": "120mm Rough Terrain Robot Wheel",
+      "purchaseUrl": "https://www.amazon.com/s?k=120mm+robot+wheels",
+      "estimatedCost": 12,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=120mm+Rough+Terrain+Robot+Wheel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "caster_wheel",
+      "name": "Rear Swivel Caster",
+      "type": "mechanism",
+      "partId": "82728d58-e748-4c2b-aa40-738a2185a089",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B085RQFMYR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x70x65mm",
+      "position3d": {
+        "x": 0,
+        "y": 32,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 50,
+        "height": 65
+      },
+      "description": "Rear support wheel for differential steering balance.",
+      "productName": "2-inch Heavy Duty Caster",
+      "purchaseUrl": "https://www.amazon.com/s?k=2+inch+swivel+caster+plate",
+      "estimatedCost": 8.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2-inch+Heavy+Duty+Caster&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_enclosure",
+      "name": "Weatherproof Housing",
+      "type": "3d_printed",
+      "partId": "02b6cbc3-8535-492c-b91e-3d0deb99014e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Weatherproof%20Housing&tag=blueprintam-20",
+      "dimensions": "180x150x80mm",
+      "position3d": {
+        "x": 0,
+        "y": 120,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 180,
+        "height": 80
+      },
+      "description": "IP65-rated custom enclosure for MCU and cellular modem.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament+1.75mm",
+      "estimatedCost": 15,
+      "printSettings": "0.2mm layer, 4 walls, 25% gyroid infill"
+    },
+    {
+      "id": "camera_gimbal_mount",
+      "name": "Thermal Camera Mount",
+      "type": "3d_printed",
+      "partId": "aa5cad3e-78b0-48e3-917a-e868bf2b65fa",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/k2p2Avbobj3dxxYxYWWkSDPdNISnbxhGykVzJpA5ugY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cHJvcmNob2JiaWVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS85LzE3NTcx/NTM3MzEvYm9zY2Ft/LWpzLW1pbmkyNTYt/OS0yNTZ4MTkyLWZw/di10aGVybWFsLWlt/YWdpbmctY2FtZXJh/LWZvci1kcm9uZXMt/d2l0aC1oZC1uaWdo/dC12aXNpb24tMTc1/NzE1MzczNS53ZWJw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 3 walls, 25% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "40x40x35mm",
+      "position3d": {
+        "x": 0,
+        "y": 120,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 40,
+        "height": 40
+      },
+      "description": "Secure mount for the FLIR Boson camera with vibration isolation.",
+      "productName": "Thermal Camera Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament+1.75mm",
+      "estimatedCost": 3.5,
+      "printSettings": "0.15mm layer, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "motor_mount_brackets",
+      "name": "Motor Mounting Plate",
+      "type": "3d_printed",
+      "partId": "0fdae684-ccc9-44eb-9642-92bf6d3d8e88",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/DktPBfXeR2Is1Gkh9IQWcvnB8qmqmJ9zoLIqOdKVvNA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGFycHN0b3AuY29t/L21lZGlhL2NhdGFs/b2cvcHJvZHVjdC9j/YWNoZS9jMGZkNDZh/ZTMzMmU1MWQ1MzVk/YjAxMGY2NzA5YjYw/Ni9lL3ovZXotc2xp/ZGVfbW90b3JfbW91/bnRfcGxhdGUuanBn",
+      "material": "PETG",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/s?k=Motor%20Mounting%20Plate&tag=blueprintam-20",
+      "dimensions": "50x50x12mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": 80
+      },
+      "boundingBox": {
+        "depth": 12,
+        "width": 300,
+        "height": 50
+      },
+      "description": "Reinforced brackets to adapt GoBILDA motors to 2020 extrusion.",
+      "productName": "Motor Mounting Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament+1.75mm",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer, 6 walls, 50% infill"
+    },
+    {
+      "id": "chassis_corner_brackets",
+      "name": "90 Degree Corner Bracket",
+      "type": "structural",
+      "partId": "8be49c86-d1dd-4e74-b6b2-fa0ac8674fcf",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/gzshdBeqhvKYcN0zRI4JIPX4TT-cMddEFzyhbqLF4KE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL1BRUUFB/T1N3YnF0bTBWNjAv/cy1sNDAwLndlYnA",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0BFRB35Z8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 300,
+        "width": 300,
+        "height": 25
+      },
+      "description": "Connects the aluminum extrusions into a square frame.",
+      "productName": "2020 Aluminum Corner Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+corner+bracket",
+      "estimatedCost": 0.75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRya0K3Jv8wk3KpxS4NoUm1DpFrfRrg0rjFhPOz7kxkogNnQSoYTQmTuASBMAd0igWWoYPeLO9d3YeQS576z4EyTuG3TvtTxFYQJXCZNwyUtR3iZtTOsVpCNvyR6OrHgwaSaIbRcurEU7yd1YQpyu78JjWpa0iWlHifsXKV3cP6MsKbNurBeL2kOBRLajhR5FsD0ryNGjrxQZKkfFZgwGDsdemg5mIT7IPcJj9XT5pqMT9E3se5a6rSmHMG7i5beoSNCltz4wGvbsCcqkfgZ6B6F0M2sn9iG1V4dGSmccMN0u0CLMa0ZsTwNtWdJod3dv33BfBcXItsb3l0TYZ0m60fKYvvYqyeINvEgELeBnycldOaqeXzXkfxaNkRzsvlaUE5rzPppYXk4MiFtQRPHrXgvvDbfYSkyMA2nVNgvNV1057j8FyL5HAQqReW5abykOm14kM2IdDG2apqazTC1KvQFDsktcpC4vmcGuctHxLGtDv6xmuyxhHxgFhnI902srw6awFCJgCYIZ5DIswVB3gFmDnEwQepuRE6vNjw7uYE4EHwLQZBUoGPHRnXgPcTMCW7gORT9tblt9mO433dNSiodsEtnlokBskqOANcI75L90zFxG38EAmCk7onZfvT7bD8ZSpnE5OGIyjhw3R13YNeL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Corner+Bracket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m5_t_nuts",
+      "name": "T-Slot Nuts",
+      "type": "misc",
+      "partId": "3309f62f-024c-4cb3-8cd6-e663a13b6c72",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5y8xVNZCmo91LpQexs0gCvgoWcP-W5HF_YJMpfL2y40/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9raW5n/cm9vbi5jb20vY2Ru/L3Nob3AvZmlsZXMv/S0lOR1JPT04tMTAw/cGMtNTBwYy1NNC1N/NS1NNi1ULUJsb2Nr/LVNxdWFyZS1OdXRz/LVQtVHJhY2stU2xp/ZGluZy1IYW1tZXIt/TnV0cy1mb3IuanBn/X1E5MC5qcGdfXzQu/d2VicD92PTE2OTk1/MTc5MzYmd2lkdGg9/MTk0Ng",
+      "material": "Zinc Plated Carbon Steel",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x10mm",
+      "description": "Hardware for mounting parts to the aluminum frame.",
+      "productName": "M5 T-Nuts for 2020 Profile",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+T-nuts+2020",
+      "estimatedCost": 0.1,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+T-Nuts+for+2020+Profile&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m5_screws",
+      "name": "Frame Screws",
+      "type": "misc",
+      "partId": "e443b793-ae6d-46ad-9575-cc8dbf80f59b",
+      "category": "mechanical",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B07F6YF38K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x10mm",
+      "description": "Main fasteners for the structural frame.",
+      "productName": "M5 Button Head Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+button+head+screws",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgZS8Wd2hfOCs5yPjoDgd9ayXygDbuJFaMWg3flXa5zspcKiKIyoMrDZB7acj8oQEcOuyqEdrxcFJwvCy4AQMxvXi7VNOYWJBn69nQ4uBMvgcCudzlenzEGhGYPCAjRRrtjGWaKympLEvZLGxoJvrbh5OEZFb5RtEhZBMGPVpjYKD8xZx4ZRR2sT119IfKl2oTXEZxGnDEzkUHxJTyzZ3HKuzcCPbXu58NRDJzP066ceTk3awbNd2soGqr5IIn1g5sl7jsGmf0aNbxizrkvOwpLk6hzGqQefv5QXemlA1PGvpOHBYGDeUcNxeK9mMeZ9nfhSoK9E4hQw9brZu1W0hVtWMoHe7QoRVveXzSQTlj5rvdnFJ52XrNBbKBjSeaxuhmlhZ2L0R0K2kejpzHXAYlPfFebM7jMEDyTHICnaisaaiC24ge8OwWn1wm8N6XNxiFmSjymeW1zVUwMRwMy9EoFH0XR8eQQDXwyCZDhGYIWp0DlCuPULqI3YZtaltkJnWNwzNaBXhrYAgqgYceXPHc1EFf0PwVd309PcxSlOrVM7Pvkks5NUVVsaMpnekOEUNAxStrE6yOQ6uv7qhharjDE9gOg6XKwNfUDRV8Qq2jY7DpwA6qaQ4aPe5XEyFYDGVhOj5ZXMN0cYLaywgaIU5zyR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Button+Head+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_standoffs",
+      "name": "PCB Standoffs",
+      "type": "misc",
+      "partId": "60f67941-9132-4850-8af9-96a714ce3a75",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/oSAGdPCAik4_A-JusFNwQqIM_nj764h_TKXt9QI43bY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFPaVowNGkxVEwu/anBn",
+      "material": "Nylon",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B07TP2YYQB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Mounts the RPi and Motor Driver inside the enclosure.",
+      "productName": "M3 Nylon Hex Standoffs",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nylon+standoff+kit",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz542OmgJ5FlEhD9bQG0BsDL0MmouzpAeW489fzqwpNPQqf9ONZXszanaulXACWDqhAgsp01EdYbaAEBHm5dJHRGowGEThJEEzfssLmBzUpW5gSunKMbEnXaMfeWdt48RcWWxVbcObmBw3Eh79IbiaJj8cjP3UJONg2ifvACw6eLMyAOMwYClof2kCAjbHuZdUkuufYytTC64rWLiIelNlBhDZVMT2JlfdUkIhtAevxUtw9xer9sKVQPnCFBxxA2Vz0qWgyDKIPS0mutEj2CeMPnaes3l7tELqgqlyazyYIgptSrBlGW2hXP7teHUS5GdaQQ3EC6QWjoTVcVK2J0Sm5S4CPLgJae5uS7dkaqXQ9PdExapFtkTLcdjSCsLQNfw0j02SyuGD8FBcvftdgNvYBXYjkvNIIzTYPckHpLzBuFPeUtiuvi5s767OHQochSADCjhDE90Rjvrh4R",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Hex+Standoffs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "wheeled inspection",
+    "thermal imaging",
+    "grid fault detection",
+    "power line corridor",
+    "autonomous monitoring"
+  ],
+  "projectName": "Grid Fault Inspection Bot",
+  "originalPrompt": "Grid fault detection robot\nWheeled inspection bot for power line corridors. Thermal imaging detects faults before failure.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print weatherproof main housing and lids",
+          "partIds": [
+            "main_enclosure"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Print high-precision thermal camera gimbal mount",
+          "partIds": [
+            "camera_gimbal_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Print reinforced motor mounting brackets",
+          "partIds": [
+            "motor_mount_brackets"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Cut and deburr aluminum V-slot rails to length",
+          "partIds": [
+            "main_chassis_rails"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test-fit M3 nylon standoffs into enclosure floor",
+          "partIds": [
+            "main_enclosure",
+            "m3_standoffs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder high-current XT60 leads to motor driver power input",
+          "partIds": [
+            "motor_driver",
+            "battery_pack"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect motors to driver terminals with 16AWG wire",
+          "partIds": [
+            "motor_driver",
+            "left_motor",
+            "right_motor"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire battery output to 5V buck converter input",
+          "partIds": [
+            "battery_pack",
+            "buck_converter_5v"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder 5V regulated output to Raspberry Pi power pins",
+          "partIds": [
+            "buck_converter_5v",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Establish UART serial link between MCU and motor driver",
+          "partIds": [
+            "main_mcu",
+            "motor_driver"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Apply heat shrink to all exposed power junctions",
+          "partIds": [
+            "battery_pack",
+            "buck_converter_5v",
+            "motor_driver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify 5V rail stability before connecting MCU",
+          "partIds": [
+            "buck_converter_5v",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Initialize 5G modem and verify cellular data link",
+          "partIds": [
+            "main_mcu",
+            "cellular_modem"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Capture and stream VGA frames from Boson camera",
+          "partIds": [
+            "main_mcu",
+            "thermal_camera"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Calibrate motor driver throttle range and direction",
+          "partIds": [
+            "motor_driver",
+            "left_motor",
+            "right_motor"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test failsafe logic for battery low-voltage cutoff",
+          "partIds": [
+            "main_mcu",
+            "battery_pack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble 2020 frame using corner brackets and M5 hardware",
+          "partIds": [
+            "main_chassis_rails",
+            "chassis_corner_brackets",
+            "m5_screws",
+            "m5_t_nuts"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount drive motors and wheels to chassis rails",
+          "partIds": [
+            "left_motor",
+            "right_motor",
+            "drive_wheels",
+            "motor_mount_brackets"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure swivel caster to rear chassis center",
+          "partIds": [
+            "caster_wheel",
+            "main_chassis_rails"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Install RPi, Modem, and Driver into printed enclosure",
+          "detail": {
+            "tip": "Leave slack in the internal cables to prevent vibration-induced disconnects during high-speed off-road inspections.",
+            "steps": [
+              "Screw eight M3x10mm nylon standoffs into the internal mounting bosses of the PETG Weatherproof Housing.",
+              "Seat the Main Controller and Dual Motor Controller onto their respective standoff sets.",
+              "Secure the boards using M3 nylon screws, ensuring the motor driver's terminal blocks align with wire exit ports.",
+              "Connect the 5G Communications Module to the Raspberry Pi and secure it to the internal chassis.",
+              "Plug the UART jumper wire from Raspberry Pi GPIO18 to the motor driver S1 signal pin."
+            ],
+            "summary": "Mount the Raspberry Pi, 5G modem, and motor driver using M3 nylon standoffs.",
+            "imageUrl": "https://dkufwkuoyesnabvxiucr.supabase.co/storage/v1/object/public/project-images/generated/steps/grid-fault-inspection-bot/assemble/9b7f829f752c4016.png"
+          },
+          "partIds": [
+            "main_mcu",
+            "cellular_modem",
+            "motor_driver",
+            "main_enclosure",
+            "m3_standoffs"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Fix thermal camera mount to front of enclosure",
+          "partIds": [
+            "thermal_camera",
+            "camera_gimbal_mount",
+            "main_enclosure"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Secure battery pack to frame center using Velcro straps",
+          "partIds": [
+            "battery_pack",
+            "main_chassis_rails"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Perform final enclosure seal and IP65 verification",
+          "partIds": [
+            "main_enclosure"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This autonomous wheeled robot monitors power line corridors using a high-resolution thermal imager to detect electrical faults. Controlled by a Raspberry Pi with 5G connectivity, the 12V differential-drive chassis utilizes an aluminum frame and weatherproof housing for rugged, real-time remote inspection.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer with PETG capability",
+      "Metric hex key set (M2.5, M3, M5)",
+      "Digital Multimeter",
+      "Soldering iron and lead-free solder",
+      "Wire strippers and crimping tool (for XT60 and terminals)",
+      "Velcro cable ties",
+      "Heat gun for shrink tubing"
+    ],
+    "assumptions": [
+      "Builder has access to PETG filament and 3D printing software",
+      "Basic knowledge of Linux/Raspberry Pi terminal",
+      "Familiarity with high-current LiFePO4 battery safety",
+      "Ability to configure 5G modem settings"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "motor_driver",
+      "voltage": "12.8V Standard (4S) / Max 14.6V Charge Voltage. High current capability for propulsion. Ensure heavy gauge wire used. Overcurrent protection via internal BMS. Nominal 12V is the minimum working voltage. Output protected by 40A fuse. Connect to BATT_POS and BATT_NEG inputs. Check polarity before connecting battery. Do not reverse polarity as the driver lacks protection. Use XT60 connectors for reliable mechanical link. Voltage monitor active via MCU telemetry loop. Estimated peak current draw under stall is 30A. Efficiency typically >95% under load. Operation range -20C to 60C. Rated for industrial outdoor use. Primary energy reservoir for full autonomy. Connect parallel sense lead to MCU for voltage monitoring. Keep wires short to minimize EMI interference. Ensure motor driver is mounted for cooling airflow. Terminal screws torqued to 0.5Nm for secure contact. Wire size 12AWG recommended for power leads. Battery BMS will cut off at 10.0V discharge limit. Charge using dedicated LiFePO4 balance charger only. Do not puncture or expose to high impact. Mechanical mounting via velcro straps in chassis. Ground reference shared across all system components. Main disconnect switch required in series with POS. Power distribution block recommended for multiple loads. Check continuity before first power-up sequence. No visible damage to insulation during inspection. Standard battery for mobile robot research platforms. High cycle life >2000 cycles at 80% DOD. Low self-discharge rate suitable for standby. Safe chemistry for forest corridor operations. Connect ground last to avoid spark discharge. Thermal fuse integrated in battery housing for safety. End of life disposal via recycling center. Maintain 50% charge during long term storage. Use separate logic power if possible for noise. Combined system ground at the battery negative terminal. Verify voltage with multimeter before mating connectors. Use gold plated connectors for low contact resistance. Avoid excessive vibration to internal cells of pack. Proper ventilation required for peak load cooling. Monitor SOC via shunt or voltage divider circuit. Always charge in a fireproof container or area. High quality cells selected for maximum reliability. Built-in thermal protection in motor driver stage. Compatible with Raspberry Pi power distribution rails. Check battery terminal connections for tightness monthly. Grounding lug connected to metal robot chassis. Ensure all connections are moisture resistant for IP65. Use heat shrink tubing on all exposed terminals. Primary power feed to high power motor bus. Connect power first, then logic signals in sequence. Use isolated grounds if noise causes sensor errors. Maintain clean battery terminals to prevent oxidation. Replace pack if casing shows swelling or leaks. Keep away from high voltage lines above the bot. EMI shielding recommended for long wire runs. 12V8V12A"
+    },
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "buck_converter_5v",
+      "voltage": "12V5A"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "main_mcu",
+      "voltage": "5V4A"
+    },
+    {
+      "type": "power",
+      "source": "motor_driver",
+      "target": "left_motor",
+      "voltage": "12V10A"
+    },
+    {
+      "type": "power",
+      "source": "motor_driver",
+      "target": "right_motor",
+      "voltage": "12V10A"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "thermal_camera",
+      "protocol": "USB",
+      "sourcePin": "USB_A",
+      "targetPin": "USB_C"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "cellular_modem",
+      "protocol": "USB",
+      "sourcePin": "USB_A",
+      "targetPin": "USB_B"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "motor_driver",
+      "protocol": "UART",
+      "sourcePin": "GPIO18",
+      "targetPin": "S1"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "fastened with M5 screws and T-nuts",
+      "source": "chassis_corner_brackets",
+      "target": "main_chassis_rails"
+    },
+    {
+      "label": "bolted to extrusion side",
+      "source": "motor_mount_brackets",
+      "target": "main_chassis_rails"
+    },
+    {
+      "label": "face-mounted via M3 screws",
+      "source": "left_motor",
+      "target": "motor_mount_brackets"
+    },
+    {
+      "label": "face-mounted via M3 screws",
+      "source": "right_motor",
+      "target": "motor_mount_brackets"
+    },
+    {
+      "label": "keyed shaft coupling",
+      "source": "drive_wheels",
+      "target": "left_motor"
+    },
+    {
+      "label": "keyed shaft coupling",
+      "source": "drive_wheels",
+      "target": "right_motor"
+    },
+    {
+      "label": "mounted to rear frame member",
+      "source": "caster_wheel",
+      "target": "main_chassis_rails"
+    },
+    {
+      "label": "mounted to top of frame",
+      "source": "main_enclosure",
+      "target": "main_chassis_rails"
+    },
+    {
+      "label": "mounted via M3 standoffs",
+      "source": "main_mcu",
+      "target": "main_enclosure"
+    },
+    {
+      "label": "mounted via M3 standoffs",
+      "source": "motor_driver",
+      "target": "main_enclosure"
+    },
+    {
+      "label": "fixed to front external face",
+      "source": "camera_gimbal_mount",
+      "target": "main_enclosure"
+    },
+    {
+      "label": "clamped inside mount",
+      "source": "thermal_camera",
+      "target": "camera_gimbal_mount"
+    },
+    {
+      "label": "strapped to center frame with Velcro",
+      "source": "battery_pack",
+      "target": "main_chassis_rails"
+    }
+  ],
+  "projectId": "eab6413e-76cd-44af-bffe-ff42363a1918"
+}

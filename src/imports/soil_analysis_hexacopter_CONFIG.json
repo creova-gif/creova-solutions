@@ -1,0 +1,1423 @@
+{
+  "plan": "- Quadcopter or Hexacopter carbon fiber frame with high-lift brushless motors, ESCs, and a flight controller running ArduPilot or PX4.\n- Multi-spectral camera or specialized soil sensor payload including pH electrodes, dielectric moisture probes, and NPK optical sensors.\n- Onboard companion computer like a Raspberry Pi or Jetson Nano for real-time data processing and GPS/RTK for precision mapping.\n- Power system utilizing high-capacity LiPo batteries and a power distribution board with voltage regulation for sensors.\n- Motorized linear actuator or servo-driven sampling mechanism to lower sensors for physical soil contact.\n- Custom 3D-printed sensor housings, landing gear extensions, and a ruggedized vehicle-mount deployment cradle.",
+  "nodes": [
+    {
+      "id": "flight_controller",
+      "name": "Flight Controller",
+      "pins": [
+        "VCC",
+        "GND",
+        "UART7_TX",
+        "UART7_RX",
+        "CAN1_H",
+        "CAN1_L",
+        "PWM1-6",
+        "I2C_SDA",
+        "I2C_SCL"
+      ],
+      "type": "mcu",
+      "partId": "a0533aee-c50e-4b27-9a01-e2cb6031b330",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OGlhv5-DbYkAS0aC32g1Y0hy9UaTcQnkdEBjPz6Ub3Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90ZXJy/YS1kcm9uZWFncmku/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzExL1Byb2R1/Y3QtV2ViLTM1Lmpw/Zw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C8Y1LMGZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "38x38x22mm",
+      "position3d": {
+        "x": 0,
+        "y": 165,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 38,
+        "width": 38,
+        "height": 22
+      },
+      "description": "Main autopilot running PX4 for autonomous flight control and sensor stabilization.",
+      "productName": "Cube Orange+ Standard Set",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=Cube+Orange+Plus",
+      "estimatedCost": 350,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVYRd0KJIbtpKYE3XNwmFcWPJvcqblig11hTsSLVcSmQLSfCBbcfjuSsYXtlIMEpBYsPqKSFcvMGKL0uAQANZYKNyNWUaAfhBHBWH5nSuZwGSlv2wZzQSbbsD1fdGrLgBRLfdz639cepxSH32YZeFY3df4ILqRwh5Wlg3H3XMus3424KVVLsz9s73ZGotm2egtbMOStGAr5sif2R18OcmBUV5ZvQhRrhdEPH6QkLFAaGORBiLGqa0CIkIT2mvLa39D1gMB834Wvze8RjIpZ615i3NDbxv6053SfaTOPErj8EevOpobQTaFtSTv7m9ADeg2hoAx4aObvSc5A8w2c1BufI45Zr0msnK2nCAUDrmZyjKKuB3mXUZtGW7HZ8mRnNpCI39LhHJpimGuFIROrG0QYnRJLTeipV95ld0eAfSgztMQGsIBLSYmMysIqEj2TgdNu4sjqGymMqVm0oe0PfnRPS2jOEqq8k9V9HSJtOwaHxQ5cClc5GxshGjnsll3mwKL2QLsuflXAJpK39NYXVOMP4MLjSepiZbqTBSPZRYeWrZFcJgC9BJBqjrcUuNZAUOTKFcfUO63Ar2lhc08ojmaEZReNYNsuTZgiFTvgdm8nMku7qAAGimSzkPhc2Ht3vARQx4mYiNOaBuCI7sBqh1DKX7twDwShNpgNkVCor9NS1mky5Md6qP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Cube+Orange%2B+Standard+Set&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "companion_computer",
+      "name": "Companion Computer",
+      "pins": [
+        "VIN",
+        "GND",
+        "USB3.0",
+        "CSI0",
+        "CSI1",
+        "ETH",
+        "UART_TX",
+        "UART_RX"
+      ],
+      "type": "mcu",
+      "partId": "bffb4c5f-9080-44d7-8ea4-506752ff6e24",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/aGhCBJBtjNumjsSuvOWBd-Q1CHLxfztOelk5IJl9P7U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90YW5u/YXRlY2hiaXouY29t/L21lZGlhL2NhdGFs/b2cvcHJvZHVjdC9j/YWNoZS9jNzY0MmFm/Y2ZlZTU3NmJiZWJl/MTRiMzRlMzMzNTc0/NS9uL3YvbnZpZGlh/X2pldHNvbl9vcmlu/X25hbm9fc3VwZXJf/ZGV2ZWxvcGVyX2tp/dC5qcGc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "CPU Clock Speed",
+            "value": "Up to 6-core Arm Cortex-A78AE v8.2 64-bit CPU (1.5 GHz)"
+          },
+          {
+            "label": "GPU Architecture",
+            "value": "NVIDIA Ampere architecture GPU with 1024 CUDA Cores, 32 Tensor Cores"
+          },
+          {
+            "label": "Memory",
+            "value": "8 GB 128-bit LPDDR5 (68 GB/s)"
+          },
+          {
+            "label": "Storage",
+            "value": "External NVMe SSD / SD Card (No onboard eMMC)"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "5-20V DC input"
+          },
+          {
+            "label": "GPIO Pins",
+            "value": "Up to 14x GPIO"
+          },
+          {
+            "label": "UART Ports",
+            "value": "Up to 4x UART"
+          },
+          {
+            "label": "Other Peripherals",
+            "value": "3x I2C, 4x SPI, 1x CAN, 4x USB 3.2 Gen 2, 3x USB 2.0, 1x GbE"
+          }
+        ],
+        "summary": "The NVIDIA Jetson Orin Nano is a compact, powerful System-on-Module (SOM) designed for edge AI applications, featuring an Arm Cortex CPU and an Ampere GPU. It provides robust processing capabilities for real-time tasks like multispectral data analysis and autonomous vision. Its comprehensive set of I/O interfaces enables flexible integration into complex robotic systems like the Soil Analysis Hexacopter.",
+        "examples": [
+          {
+            "url": "https://developer.nvidia.com/embedded/learn/getting-started-jetson-orin-nano-devkit",
+            "title": "Getting Started with Jetson Orin Nano and Hello AI World",
+            "description": "This official NVIDIA guide walks through the initial setup of the Jetson Orin Nano Developer Kit, including flashing the OS, and then introduces the fundamental 'Hello AI World' project. It's a comprehensive starting point for running basic AI inference tasks on the device, such as image classification and object detection."
+          },
+          {
+            "url": "https://www.hackster.io/PhatLe/jetson-orin-nano-gpio-blinking-led-with-python-9efb42",
+            "title": "Jetson Orin Nano: GPIO Blinking LED with Python",
+            "description": "A beginner-friendly tutorial demonstrating how to control the GPIO pins on the Jetson Orin Nano using Python. This project covers the basic concept of blinking an LED, analogous to the 'blink' example for traditional microcontrollers, showcasing peripheral usage."
+          },
+          {
+            "url": "https://www.hackster.io/muhtasham/real-time-object-detection-with-yolov8-on-jetson-orin-nano-144498",
+            "title": "Real-time Object Detection with YOLOv8 on Jetson Orin Nano",
+            "description": "This tutorial shows how to deploy and run the YOLOv8 object detection model on the Jetson Orin Nano for real-time inference. It's a practical example of leveraging the Jetson's AI capabilities for computer vision tasks, crucial for applications like autonomous navigation or object recognition."
+          },
+          {
+            "url": "https://developer.nvidia.com/blog/getting-started-with-csi-cameras-on-nvidia-jetson/",
+            "title": "Setting up CSI Camera and GStreamer on Jetson Orin Nano",
+            "description": "An essential guide for integrating and utilizing CSI cameras with the Jetson Orin Nano. This tutorial explains how to capture and stream video using GStreamer pipelines, which is fundamental for any project involving real-time vision processing and multispectral data acquisition."
+          },
+          {
+            "url": "https://www.hackster.io/PhatLe/jetson-orin-nano-with-ros2-and-lidar-for-robotics-926f8d",
+            "title": "Jetson Orin Nano with ROS 2 and Lidar for Robotics",
+            "description": "This project demonstrates how to integrate the Jetson Orin Nano into a robotics platform using ROS 2 (Robot Operating System) and a LiDAR sensor. It's a more complete example showing how the Jetson can act as a companion computer for advanced navigation and environmental mapping, highly relevant for drone-based applications."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/102110839/19285410",
+            "note": "Embedded Evaluation Board, ships today.",
+            "price": "",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.sparkfun.com/nvidia-jetson-orin-nano-developer-kit.html",
+            "note": "Super Developer Kit, delivers up to 67 TOPS of AI performance.",
+            "price": "$249",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.mouser.com/Search/Refine?N=16616421",
+            "note": "Search result for NVIDIA Jetson Orin Nano.",
+            "price": "",
+            "vendor": "Mouser"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=NVIDIA%20Jetson%20Orin%20Nano",
+            "label": "GrabCAD",
+            "description": "3D models in various formats like STEP, SLDPRT, IGES."
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=NVIDIA%20Jetson%20Orin%20Nano",
+            "label": "SnapEDA",
+            "description": "Footprints, symbols, and 3D models for PCB design."
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=NVIDIA%20Jetson%20Orin%20Nano",
+            "label": "Ultra Librarian",
+            "description": "ECAD models, including footprints, symbols, and 3D models."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=NVIDIA%20Jetson%20Orin%20Nano",
+            "label": "Thingiverse",
+            "description": "STL files for 3D printing."
+          }
+        ],
+        "datasheetUrl": "https://files.seeedstudio.com/wiki/Jetson-Orin-Nano-DevKit/jetson-orin-nano-developer-kit-datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/index.html",
+            "type": "guide",
+            "title": "NVIDIA Developer",
+            "description": "Developer Kit User Guide"
+          },
+          {
+            "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/software_setup.html",
+            "type": "guide",
+            "title": "NVIDIA Developer",
+            "description": "Software Setup Guide"
+          },
+          {
+            "url": "https://developer.nvidia.com/embedded/jetpack",
+            "type": "reference",
+            "title": "NVIDIA Developer",
+            "description": "JetPack SDK Official Page"
+          },
+          {
+            "url": "https://github.com/ajeetraina/jetson-orin-nano-super-guide",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "Comprehensive Getting Started Guide"
+          },
+          {
+            "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/index.html",
+            "type": "guide",
+            "title": "NVIDIA Developer",
+            "description": "Developer Kit User Guide"
+          },
+          {
+            "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/software_setup.html",
+            "type": "guide",
+            "title": "NVIDIA Developer",
+            "description": "Software Setup Guide"
+          },
+          {
+            "url": "https://developer.nvidia.com/embedded/jetpack",
+            "type": "reference",
+            "title": "NVIDIA Developer",
+            "description": "JetPack SDK Official Page"
+          },
+          {
+            "url": "https://github.com/ajeetraina/jetson-orin-nano-super-guide",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "Comprehensive Getting Started Guide"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BZJTQ5YP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x79x21mm",
+      "position3d": {
+        "x": 0,
+        "y": 115,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 79,
+        "width": 100,
+        "height": 21
+      },
+      "description": "Edge computer for real-time multispectral data processing and autonomous landing vision.",
+      "productName": "NVIDIA Jetson Orin Nano",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=Jetson+Orin+Nano",
+      "estimatedCost": 499,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9diAj7kfP92HOLwlldMbO6A7YBEFq2SUAgvezyh41ynH1ADRUeG3OizHE5P3rBVijgFSdmDb49agdjoBFpxOcHI1y2fJ9yIKO4ZCnWribalvwmbmrqwUkaM2EvhuXaD5aJrhvKucfn6ANLN2l8D2x2my0t0aQkCUSxCC5WKEoTHNZAQni6eUCq3Ib6uxT2p8UwNTai82LIPgUFtl6aehODtZtNzfFsfoz3p1Z8nwAluNeVS7gNUEji5EvpchtxhfPJHLxg31hCqHHIA8QcXbQN0Kch64IbR8h0AtExu2J0Jlnt9JvLPdpR9RGRMw4qJLX2ip0bSfZYDNMS1iz44ZB5VgQH2oIa8jfgy4EQqnec1jbLOiSElVEyONrk1vaF4luSc9rYwm12T8BVFqJ1wEqVa6miWoQqAD9bdRRyKKI3o1F1PA8VNGdbe3FkyNOw6Vxjmzv4HJsvV0DUVXLuCYrSKDl2PkDCoZEF3B5JGJki1OJRRIdFdKgZ1Uqezei84ZvmA7X2eqob1sOKnuONnNxK45g2DZNDLZ3hwLAEnQKmHlma9f6h96dv590ScINtycRiW7prtj5ghK16Tw5X1to3czbtIxzd05SfmpZx5YyBz2e1FW9zhobI27I2ykhrnAQdUzatS1SdQ8ldd2PBOTnmbHp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NVIDIA+Jetson+Orin+Nano&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "multispectral_cam",
+      "name": "Multispectral Camera",
+      "pins": [
+        "VCC",
+        "GND",
+        "DLS2_IN",
+        "TRIGGER",
+        "ETH"
+      ],
+      "type": "sensor",
+      "partId": "6760f89f-63f8-4e2e-b4ff-f8d07ca5c440",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4LGeq0WpT_j3PnxjXzRldSY58Y_GE_4ci5166LHSs_A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb3B0/cnouY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIzLzA1L21p/Y2FzZW5zZS1yZWRl/ZGdlLXAtZHJvbmUt/c2Vuc29yLndlYnA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Power In,Trigger In,Ethernet Data,USB Data"
+          }
+        ]
+      },
+      "dimensions": "82x60x49mm",
+      "position3d": {
+        "x": 0,
+        "y": 40,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 82,
+        "height": 49
+      },
+      "description": "High-resolution sensor for pH, moisture, and nitrogen vegetation indices mapping.",
+      "productName": "MicaSense RedEdge-P",
+      "purchaseUrl": "https://www.micasense.com/rededge-p/",
+      "estimatedCost": 8500,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MicaSense+RedEdge-P&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gps_rtk",
+      "name": "RTK GPS Module",
+      "pins": [
+        "CAN_H",
+        "CAN_L",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "87f3d54c-2fba-4da9-a372-9b172f08229a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/pzIVdFL5PRHEgZFcQSpySk1lVQxBAjhn-IgCvaQSt90/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pZmRh/bGl2ZXN0b3JhZ2Uu/YmxvYi5jb3JlLndp/bmRvd3MubmV0L3Vz/ZXItdXBsb2Fkcy83/OTQ5MzIvMzQxMjM0/LzAwMDAwMDAwLTAw/MDAtMDAwMC0wMDAw/LTAwMDAwMDAwMDAw/MC8wMV9tYWluX2Vu/dHJ5X2ltZy5qcGc",
+      "quantity": 1,
+      "dimensions": "68x68x16mm",
+      "position3d": {
+        "x": 0,
+        "y": 308,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 68,
+        "width": 68,
+        "height": 16
+      },
+      "description": "High-precision positioning for centimeter-level soil mapping.",
+      "productName": "Here3+ GPS RTK",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=Here3+GPS",
+      "estimatedCost": 220,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Here3%2B+GPS+RTK&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_1",
+      "name": "ESC Motor 1",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": 150,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 1.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_2",
+      "name": "ESC Motor 2",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": 75,
+        "y": 150,
+        "z": 130
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 2.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_3",
+      "name": "ESC Motor 3",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": -75,
+        "y": 150,
+        "z": 130
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 3.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_4",
+      "name": "ESC Motor 4",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": -150,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 4.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_5",
+      "name": "ESC Motor 5",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": -75,
+        "y": 150,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 5.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_6",
+      "name": "ESC Motor 6",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM_IN",
+        "MOTOR_A",
+        "MOTOR_B",
+        "MOTOR_C"
+      ],
+      "type": "actuator",
+      "partId": "d3311983-e233-49c7-ba6e-37e5bdc5e552",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OXyzgW0NCB2iKPnLFb0hTwZHtT9vGOYyZYqFYXw7B2s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnNp/Z2h0ZnB2LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9tYWluLTAy/XzcxNGFkMWUxLTNh/NTAtNDNhOC04ZThi/LTI2NDM2YjA1ZGVl/Yl8yMDQ4eDIwNDgu/anBnP3Y9MTY3NDAz/NDg0Mg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FT3H929K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x16mm",
+      "position3d": {
+        "x": 75,
+        "y": 150,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 16
+      },
+      "description": "Electronic Speed Controller for brushless motor 6.",
+      "productName": "T-Motor Flame 60A",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+Flame+60A",
+      "estimatedCost": 65,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwXpSbFjmrVe34Xg0vWYTQHT3LYo2AbYKMwPAPr3WImbvLJuNBkS2mF5bxKWsMP8YNwxk7SeYQ9ecWl5AIQDfdYKkfv7Gq2YkJ5I6EZGr97w6d52K5Eb2JnOikgeZ1cgcbfuRiBR6DTaiv8MPXJUIQWvAuNMSzXMCo42nrSaQS8AktDciYN50W2K6ka0YHPbk9ywt5MAuOFbOCtrNiFRvdGdOtaZeRbusH7CQU0e2Cg7AZANjsRNEY5locH1c4e3Vlf8YS5tn8bftsqEldQ6U0NV40htbi3mPdDRQx2lkYO18i1h1YzfkFiMa8TNyg7IKtBkuHdsvHzdqTOlGEYRDplRRWW3umxSipLZllz6XjzsethfJNGEBoAzG8pyvLuQNUqTb9xZCK10cOTn4VoVMGusr6kGR9DKICXCxNyxpSfCen72SxR5r7bqgXvkzt0iQwZBGVjzn2L2zvmJGCErwTDlJkuzuBhYpHnyi0H5MTVhIpo6VPsFxp7rSa380cs4SjvZKxvJh9APYapyhfgaTaDfoM9VvHUjWIhxrFg1MUlOA4oeKP1Ix9vwfNJkkzEwJ1p5g8GNMEgcPSPGg8sm3el9mwL1lp8PWQab7jFHkAgZtHQrxXeQxFwsLVSSrAf9pbwij7K8mxVkOuK7pZMGhm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+Flame+60A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_dist",
+      "name": "PDB and Regulator",
+      "pins": [
+        "BATT_IN",
+        "5V_OUT",
+        "12V_OUT",
+        "GND",
+        "CURR_SENSE",
+        "VOLT_SENSE"
+      ],
+      "type": "power",
+      "partId": "eac94a0e-af96-4fd2-bee1-4afc467f402d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QpKNwwHjPMtUp3Nmwfk03aAfqVr_mCKa8NU9VGGB7AA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pcmxv/Y2suY29tL2Nkbi9z/aG9wL3Byb2R1Y3Rz/LzA0YS5qcGc_dj0x/NTkyNzg5Mzc3Jndp/ZHRoPTUwNA",
+      "quantity": 1,
+      "dimensions": "50x50x12mm",
+      "position3d": {
+        "x": 0,
+        "y": 140,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 12
+      },
+      "description": "High-current power distribution board with regulated 5V and 12V rails.",
+      "productName": "Maucn PL-200",
+      "purchaseUrl": "https://www.amazon.com/s?k=Maucn+Power+Module",
+      "estimatedCost": 85,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Maucn+PL-200&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_battery",
+      "name": "Flight Battery",
+      "pins": [
+        "VCC",
+        "GND",
+        "BALANCE"
+      ],
+      "type": "power",
+      "partId": "8b75e8df-4efd-4998-9bd7-5b0336cf096e",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/P4t7MV6el37DzgEM9RrFTMKd-QhDWHdv09U36hC9DTU/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly91YXZn/YXJhZ2UuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzA2/LzEtMTMwLTEwMHgx/MDAucG5n",
+      "quantity": 1,
+      "dimensions": "212x97x71mm",
+      "position3d": {
+        "x": 0,
+        "y": 195,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 97,
+        "width": 212,
+        "height": 71
+      },
+      "description": "High-capacity LiPo battery for heavy-lift endurance.",
+      "productName": "Tattu Plus 6S 22000mAh",
+      "purchaseUrl": "https://www.amazon.com/s?k=Tattu+6S+22000mAh",
+      "estimatedCost": 450,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tattu+Plus+6S+22000mAh&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "telemetry_radio",
+      "name": "Telemetry Radio",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX"
+      ],
+      "type": "module",
+      "partId": "b0667310-c562-4bf3-a968-8ee3f8a19d4a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/H4s8lIvUAxF9A3JB2MfupcWki5rjn2AD9HLNI6L5ATY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvaC9vL2hvbHli/cm8tc2lrLXRlbGVt/ZXRyeS1yYWRpby12/My01MDBtLXctOTE1/bWh6LV9pbWFnZS01/Xy5qcGc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,TX,RX"
+          }
+        ]
+      },
+      "dimensions": "28x53x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 155,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 53,
+        "width": 28,
+        "height": 10
+      },
+      "description": "Long-range communication link to the ground vehicle.",
+      "productName": "Holybro SiK Telemetry Radio",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=SiK+Telemetry+Radio",
+      "estimatedCost": 45,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Holybro+SiK+Telemetry+Radio&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "hex_frame",
+      "name": "Hexacopter Frame",
+      "type": "structural",
+      "partId": "ad6b12b7-6763-4888-8f2f-7eade4710763",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/fLQ3RgTZSpA1IreVgtbJC4Obw_BkE15xCwUFTUWrHHw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9xd2lu/b3V0LmNvbS9jZG4v/c2hvcC9wcm9kdWN0/cy9GMDc4MDctVGFy/b3QtNjgwUFJPLVNp/eC1heGxlLTYtYXhs/ZS1Gb2xkaW5nLUhl/eGFjb3B0ZXItQWly/Y3JhZnQtRnJhbWUt/S2l0LVRMNjhQMDAt/RlNfZ3JhbmRlLmpw/Zz92PTE1NzE3MTE5/MDI",
+      "material": "Carbon Fiber",
+      "quantity": 1,
+      "dimensions": "680x680x300mm",
+      "position3d": {
+        "x": 0,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 680,
+        "width": 680,
+        "height": 300
+      },
+      "description": "Professional carbon fiber folding frame for high-lift payloads.",
+      "productName": "Tarot 680PRO Carbon Fiber Frame",
+      "purchaseUrl": "https://www.amazon.com/s?k=Tarot+680PRO+Hexacopter+Frame",
+      "estimatedCost": 165,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tarot+680PRO+Carbon+Fiber+Frame&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_1",
+      "name": "Brushless Motor 1",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": 300,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_2",
+      "name": "Brushless Motor 2",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": 150,
+        "y": 150,
+        "z": 260
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_3",
+      "name": "Brushless Motor 3",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": -150,
+        "y": 150,
+        "z": 260
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_4",
+      "name": "Brushless Motor 4",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": -300,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_5",
+      "name": "Brushless Motor 5",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": -150,
+        "y": 150,
+        "z": -260
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brushless_motor_6",
+      "name": "Brushless Motor 6",
+      "type": "mechanism",
+      "partId": "d8ba36df-32ed-45d2-bce6-ad64c9f5eefe",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j68FBKuPmI1_qK6mXix_xXmPNvPOLtODOaPgEk1fQvE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9pL3RpZ2Vy/X21vdG9yX21uNDAx/NC05XzQwMGt2XzEu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09P45FGY6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x45x35mm",
+      "position3d": {
+        "x": 150,
+        "y": 150,
+        "z": -260
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 35
+      },
+      "description": "High-efficiency motor for heavy lift.",
+      "productName": "T-Motor MN4014 KV400",
+      "purchaseUrl": "https://www.amazon.com/s?k=T-Motor+MN4014",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwJEYocXlAw9E7f83LbEl7eV5pHyeVW3OcZ9WkZT1Ocqy5jgcN7d52kTsMJoHQvUoxxYyk7HdgUzmfV5NwNwlQfViyOpgm9FFY6wGNL5Y1qpZOpQRBKkcz42dbzJasPZiFa37wb1qvR2anSua3uL5clA1QoIsvAqypRG14EVPOkDkYn3jyjW9R43EvL4xI0gz9fLP8EJqjwqhRnZ9IptD8T6DoZL5TVTE7cbJ6RYS08hVmZTz0zq1nRZuqgmeugtL6SFtGPVZa7MNlgumrESrmIm6g7OdXG1148N5ihPt5zIerI32Kx1b4zBOX7wLGyapvpqfNM6KaBvKLl4B9Jt2KooPBxYZTizOfrsfdmVpu69rDWmezSPbbtfIwGEtCC46gh7GDKiw4noNvZXui0eJt3TbIYrFedaUp2khI6xSpxES7gZ3IWHCPuFUnJZgW0OVfCjc4XC4QVR1lfsc8mH51WbChoCVuJOz7qOkC5TSVAQVjm49MACjUyOKAtCWJqFdgkB77zcEfd7d5Wqf3KorBkNCQjBxBVUfIqwPmLPiQycifs3LwX60OK7GQRLqmZvx1YGc5mpnd48vgGM0Q5AZ2G6lVTwJEea8hMxj4zP9zvLfMkTp96eSDar2ydL2NOguBVJUAQcJAQbRMi9VGsJvCYL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+MN4014+KV400&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "camera_gimbal",
+      "name": "Camera Gimbal Mount",
+      "type": "mechanism",
+      "partId": "2152e256-2978-4280-8620-9917532961a1",
+      "category": "mechanical",
+      "quantity": 1,
+      "dimensions": "120x120x150mm",
+      "position3d": {
+        "x": 0,
+        "y": 80,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 120,
+        "height": 150
+      },
+      "description": "Active stabilization for downward multispectral imaging.",
+      "productName": "3-Axis Stabilized Gimbal for Multispectral",
+      "purchaseUrl": "https://www.amazon.com/s?k=3-axis+brushless+gimbal+drone",
+      "estimatedCost": 250,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3-Axis+Stabilized+Gimbal+for+Multispectral&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "jetson_mount",
+      "name": "Jetson Mount Plate",
+      "type": "3d_printed",
+      "partId": "b508deae-58bd-4aa1-bef1-9c880414e74b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Jetson%20Nano%20Mount%20Plate&tag=blueprintam-20",
+      "dimensions": "110x85x10mm",
+      "position3d": {
+        "x": 0,
+        "y": 125,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 85,
+        "width": 110,
+        "height": 10
+      },
+      "description": "Custom mount for Jetson Orin Nano with vibration damping holes.",
+      "productName": "Jetson Nano Mount Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "30% infill, 3 shells"
+    },
+    {
+      "id": "gps_mast",
+      "name": "GPS Mast Mount",
+      "type": "structural",
+      "partId": "8af9adc7-6ec6-4534-8024-776f1aa6d420",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/8-61wT8_orGUe0w3_XtC6UZ8cTFI-UYuq3kNXTMphpo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZHJvbmVzZGlyZWN0/LmNvLnVrL0ltYWdl/cy9HUFMtRk0wMV8x/X0xhcmdlUHJvZHVj/dEltYWdlLmpwZz93/aWR0aD03NTAmaGVp/Z2h0PTc1MCZ2PTM",
+      "quantity": 1,
+      "dimensions": "150x20x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 225,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 150
+      },
+      "description": "Elevates RTK GPS to reduce interference.",
+      "productName": "Folding GPS Mount Antenna Seat",
+      "purchaseUrl": "https://www.amazon.com/s?k=drone+gps+mast",
+      "estimatedCost": 12,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Folding+GPS+Mount+Antenna+Seat&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "landing_pad_cradle",
+      "name": "Vehicle Landing Cradle",
+      "type": "3d_printed",
+      "partId": "2e4af2ba-4a64-4cff-8530-3b322bca7404",
+      "category": "mechanical",
+      "material": "ASA",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/s?k=Vehicle%20Landing%20Cradle&tag=blueprintam-20",
+      "dimensions": "100x100x50mm",
+      "position3d": {
+        "x": 0,
+        "y": 25,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 100,
+        "height": 50
+      },
+      "description": "UV-resistant corner guides for vehicle-top automated landing.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=ASA+filament",
+      "estimatedCost": 8,
+      "printSettings": "40% infill, 4 shells"
+    },
+    {
+      "id": "m3_screws",
+      "name": "Hex Standoff Screws",
+      "type": "misc",
+      "partId": "1957bba3-38db-471d-8b69-460f9ec505f9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5B7US_BqrFThgxRPQ6pNruXA9XOnvuiSioxNXCD96d8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tb25z/dGVyYm9sdHMuY29t/L2Nkbi9zaG9wL2Zp/bGVzL0lTTzczODBf/TTN4MTBfN2NkMmNj/N2ItYzZjOC00MDg3/LWI2OWYtZDRhOWI1/N2I5ZjAzLmpwZz92/PTE3NTY3NDk0Nzkm/d2lkdGg9MTYwMA",
+      "material": "Stainless Steel",
+      "quantity": 24,
+      "amazonUrl": "https://www.amazon.com/dp/B0FQJQNHF5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Standard fasteners for electronics and frame assembly.",
+      "productName": "M3 Button Head Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+button+head+screws",
+      "estimatedCost": 0.05,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Button+Head+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propellers",
+      "name": "Carbon Propeller Set",
+      "type": "mechanism",
+      "partId": "3f297f6f-f832-4ba6-ae9b-628a8687bebc",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EcKEqtkRHaBPoSW4rDPeIaqrtL5s_LxmQ3naMQc3ujI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kcm9u/ZXN2aXNpb24ubmV0/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzA5LzM5MjlfXzA2/NDQxLmpwZw",
+      "material": "Carbon Fiber",
+      "quantity": 3,
+      "dimensions": "381x15x5mm",
+      "position3d": {
+        "x": 300,
+        "y": 170,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 381,
+        "height": 5
+      },
+      "description": "Matched CW/CCW pairs for 15-inch lift efficiency.",
+      "productName": "T-Motor 15x5 Carbon Fiber Prop",
+      "purchaseUrl": "https://www.amazon.com/s?k=1550+carbon+fiber+propeller",
+      "estimatedCost": 60,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+15x5+Carbon+Fiber+Prop&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "autonomous soil analysis",
+    "multi-sensor UAV mapping",
+    "vehicle-deployable system",
+    "smallholder plot focus",
+    "precision agriculture"
+  ],
+  "projectName": "Soil Analysis Hexacopter",
+  "originalPrompt": "Autonomous soil analysis drone\nMulti-sensor UAV mapping pH, moisture, nitrogen across smallholder plots. Deployable from vehicle",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print companion computer and vehicle interface parts",
+          "detail": {
+            "tip": "Print the ASA landing cradles in a heated enclosure to prevent warping and ensure the corner guide geometry remains perfectly square for autonomous docking.",
+            "steps": [
+              "Load PETG filament and slice the Jetson Mount Plate with 30% infill and 3 shells.",
+              "Orient the Jetson Mount Plate flat on the bed to ensure M2.5 mounting holes remain dimensionally accurate.",
+              "Switch to ASA filament for the four Vehicle Landing Cradle components to provide UV resistance.",
+              "Slice the Landing Cradles using 40% infill and 4 shells for maximum structural durability during docking.",
+              "Remove support material and clear out the 10mm damping holes on the Jetson Mount Plate.",
+              "Test-fit the M2.5 screws into the companion computer mounting holes to ensure a clean pass-through."
+            ],
+            "summary": "3D print the Jetson mounting plate and landing cradles using specified PETG and ASA settings.",
+            "imageUrl": "https://dkufwkuoyesnabvxiucr.supabase.co/storage/v1/object/public/project-images/generated/steps/soil-analysis-hexacopter/fabricate/f9d611dd67a7155f.png"
+          },
+          "partIds": [
+            "jetson_mount",
+            "landing_pad_cradle"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Install heat-set inserts or nylon standoffs into Jetson mount",
+          "partIds": [
+            "jetson_mount",
+            "companion_computer"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Assemble folding carbon fiber arms and center plates",
+          "partIds": [
+            "hex_frame",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Dry-fit multispectral camera to gimbal bracket",
+          "partIds": [
+            "multispectral_cam",
+            "camera_gimbal"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Apply threadlocker to motor mounting bolts",
+          "partIds": [
+            "brushless_motor_1",
+            "brushless_motor_2",
+            "brushless_motor_3",
+            "brushless_motor_4",
+            "brushless_motor_5",
+            "brushless_motor_6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder main XT90-AS lead and ESC power wires to PDB",
+          "partIds": [
+            "power_dist",
+            "esc_1",
+            "esc_2",
+            "esc_3",
+            "esc_4",
+            "esc_5",
+            "esc_6"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Route and crimp PWM signal leads from ESCs to Flight Controller",
+          "partIds": [
+            "flight_controller",
+            "esc_1",
+            "esc_2",
+            "esc_3",
+            "esc_4",
+            "esc_5",
+            "esc_6"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Construct high-current battery cable and verify polarity",
+          "partIds": [
+            "lipo_battery",
+            "power_dist"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Jetson power input to 12V regulated rail",
+          "partIds": [
+            "companion_computer",
+            "power_dist"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire CAN bus and UART telemetry links",
+          "partIds": [
+            "flight_controller",
+            "gps_rtk",
+            "telemetry_radio",
+            "companion_computer"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Establish Ethernet link between Jetson and Camera",
+          "partIds": [
+            "companion_computer",
+            "multispectral_cam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash ArduCopter firmware and configure hexacopter frame type",
+          "partIds": [
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Calibrate ESC endpoints and verify motor rotation direction",
+          "partIds": [
+            "esc_1",
+            "esc_2",
+            "esc_3",
+            "esc_4",
+            "esc_5",
+            "esc_6",
+            "brushless_motor_1"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Configure RTK GPS inject settings and verify fix status",
+          "partIds": [
+            "gps_rtk",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Initialize Jetson Orin Nano and verify camera stream",
+          "partIds": [
+            "companion_computer",
+            "multispectral_cam"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test MAVLink communication between FC and Companion Computer",
+          "partIds": [
+            "flight_controller",
+            "companion_computer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Secure Flight Controller and PDB within center frame",
+          "partIds": [
+            "flight_controller",
+            "power_dist",
+            "hex_frame"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount motors and props ensuring correct CW/CCW orientation",
+          "partIds": [
+            "brushless_motor_1",
+            "propellers",
+            "hex_frame"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Install gimbal and multispectral camera assembly",
+          "partIds": [
+            "camera_gimbal",
+            "multispectral_cam",
+            "hex_frame"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach GPS mast and RTK module for maximum sky view",
+          "partIds": [
+            "gps_mast",
+            "gps_rtk",
+            "hex_frame"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount vehicle landing cradle to vehicle roof rack",
+          "partIds": [
+            "landing_pad_cradle"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform final balance check and secure battery strap",
+          "partIds": [
+            "lipo_battery",
+            "hex_frame"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This heavy-lift hexacopter utilizes a multispectral camera and RTK GPS to map soil pH, moisture, and nitrogen levels across smallholder plots. Controlled by an ArduPilot-based flight controller and an NVIDIA Jetson companion computer, the system autonomously deploys from a vehicle-mounted cradle for precision agriculture mapping.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer with ASA/PETG capabilities",
+      "M2.5 and M3 hex keys",
+      "Soldering station with high-thermal capacity tip",
+      "Heat gun for heat shrink",
+      "Wire strippers and crimping tool",
+      "Multimeter",
+      "Laptop with ArduPilot/PX4 Ground Control Station",
+      "Loctite 242 (Blue) threadlocker"
+    ],
+    "assumptions": [
+      "Builder has experience with high-current LiPo safety",
+      "Familiarity with UAV ground control software",
+      "Access to a flat, level surface for IMU/Compass calibration",
+      "Basic knowledge of Linux/Ubuntu for companion computer setup"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "power_dist",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 80A. Label: MAIN_BATTERY"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_1",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_1"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_2",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_2"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_3",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_3"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_4",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_4"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_5",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_5"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "esc_6",
+      "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_6"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "flight_controller",
+      "voltage": "5.3V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 2A. Label: FC_POWER"
+    },
+    {
+      "type": "power",
+      "source": "power_dist",
+      "target": "companion_computer",
+      "voltage": "12V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 5A. Label: JETSON_POWER"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_1",
+      "protocol": "PWM",
+      "sourcePin": "PWM1",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_2",
+      "protocol": "PWM",
+      "sourcePin": "PWM2",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_3",
+      "protocol": "PWM",
+      "sourcePin": "PWM3",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_4",
+      "protocol": "PWM",
+      "sourcePin": "PWM4",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_5",
+      "protocol": "PWM",
+      "sourcePin": "PWM5",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "esc_6",
+      "protocol": "PWM",
+      "sourcePin": "PWM6",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "gps_rtk",
+      "protocol": "CAN",
+      "sourcePin": "CAN1_H",
+      "targetPin": "CAN_H"
+    },
+    {
+      "type": "data",
+      "source": "companion_computer",
+      "target": "flight_controller",
+      "protocol": "UART",
+      "sourcePin": "UART_TX",
+      "targetPin": "UART7_RX"
+    },
+    {
+      "type": "data",
+      "source": "companion_computer",
+      "target": "multispectral_cam",
+      "protocol": "Ethernet",
+      "sourcePin": "ETH",
+      "targetPin": "ETH"
+    },
+    {
+      "type": "data",
+      "source": "flight_controller",
+      "target": "telemetry_radio",
+      "protocol": "UART",
+      "sourcePin": "UART1_TX",
+      "targetPin": "RX"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_1"
+    },
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_2"
+    },
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_3"
+    },
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_4"
+    },
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_5"
+    },
+    {
+      "label": "M3 bolts to motor arm",
+      "source": "hex_frame",
+      "target": "brushless_motor_6"
+    },
+    {
+      "label": "Zip-tied to motor arm",
+      "source": "brushless_motor_1",
+      "target": "esc_1"
+    },
+    {
+      "label": "Rail mount bracket",
+      "source": "hex_frame",
+      "target": "camera_gimbal"
+    },
+    {
+      "label": "1/4-20 mounting screw",
+      "source": "camera_gimbal",
+      "target": "multispectral_cam"
+    },
+    {
+      "label": "Nylon standoffs",
+      "source": "hex_frame",
+      "target": "jetson_mount"
+    },
+    {
+      "label": "M2.5 mounting screws",
+      "source": "jetson_mount",
+      "target": "companion_computer"
+    },
+    {
+      "label": "Clamped to top plate",
+      "source": "hex_frame",
+      "target": "gps_mast"
+    },
+    {
+      "label": "Adhesive pad",
+      "source": "gps_mast",
+      "target": "gps_rtk"
+    },
+    {
+      "label": "Prop adapter bolts",
+      "source": "brushless_motor_1",
+      "target": "propellers"
+    }
+  ],
+  "projectId": "414895c1-c00f-4555-bc9f-4c894ff6a0e2"
+}

@@ -1,0 +1,136 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "power_dist",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 80A. Label: MAIN_BATTERY"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_1",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_1"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_2",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_2"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_3",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_3"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_4",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_4"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_5",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_5"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "esc_6",
+    "voltage": "22.2V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 30A. Label: ESC_PWR_6"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "flight_controller",
+    "voltage": "5.3V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 2A. Label: FC_POWER"
+  },
+  {
+    "type": "power",
+    "source": "power_dist",
+    "target": "companion_computer",
+    "voltage": "12V Greenland HV LiPo CAPABLE OF 100A peak discharge. Use XT90-AS connector. No data. Current: 5A. Label: JETSON_POWER"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_1",
+    "protocol": "PWM",
+    "sourcePin": "PWM1",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_2",
+    "protocol": "PWM",
+    "sourcePin": "PWM2",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_3",
+    "protocol": "PWM",
+    "sourcePin": "PWM3",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_4",
+    "protocol": "PWM",
+    "sourcePin": "PWM4",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_5",
+    "protocol": "PWM",
+    "sourcePin": "PWM5",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "esc_6",
+    "protocol": "PWM",
+    "sourcePin": "PWM6",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "gps_rtk",
+    "protocol": "CAN",
+    "sourcePin": "CAN1_H",
+    "targetPin": "CAN_H"
+  },
+  {
+    "type": "data",
+    "source": "companion_computer",
+    "target": "flight_controller",
+    "protocol": "UART",
+    "sourcePin": "UART_TX",
+    "targetPin": "UART7_RX"
+  },
+  {
+    "type": "data",
+    "source": "companion_computer",
+    "target": "multispectral_cam",
+    "protocol": "Ethernet",
+    "sourcePin": "ETH",
+    "targetPin": "ETH"
+  },
+  {
+    "type": "data",
+    "source": "flight_controller",
+    "target": "telemetry_radio",
+    "protocol": "UART",
+    "sourcePin": "UART1_TX",
+    "targetPin": "RX"
+  }
+]

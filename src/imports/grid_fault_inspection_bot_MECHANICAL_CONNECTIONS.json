@@ -1,0 +1,67 @@
+[
+  {
+    "label": "fastened with M5 screws and T-nuts",
+    "source": "chassis_corner_brackets",
+    "target": "main_chassis_rails"
+  },
+  {
+    "label": "bolted to extrusion side",
+    "source": "motor_mount_brackets",
+    "target": "main_chassis_rails"
+  },
+  {
+    "label": "face-mounted via M3 screws",
+    "source": "left_motor",
+    "target": "motor_mount_brackets"
+  },
+  {
+    "label": "face-mounted via M3 screws",
+    "source": "right_motor",
+    "target": "motor_mount_brackets"
+  },
+  {
+    "label": "keyed shaft coupling",
+    "source": "drive_wheels",
+    "target": "left_motor"
+  },
+  {
+    "label": "keyed shaft coupling",
+    "source": "drive_wheels",
+    "target": "right_motor"
+  },
+  {
+    "label": "mounted to rear frame member",
+    "source": "caster_wheel",
+    "target": "main_chassis_rails"
+  },
+  {
+    "label": "mounted to top of frame",
+    "source": "main_enclosure",
+    "target": "main_chassis_rails"
+  },
+  {
+    "label": "mounted via M3 standoffs",
+    "source": "main_mcu",
+    "target": "main_enclosure"
+  },
+  {
+    "label": "mounted via M3 standoffs",
+    "source": "motor_driver",
+    "target": "main_enclosure"
+  },
+  {
+    "label": "fixed to front external face",
+    "source": "camera_gimbal_mount",
+    "target": "main_enclosure"
+  },
+  {
+    "label": "clamped inside mount",
+    "source": "thermal_camera",
+    "target": "camera_gimbal_mount"
+  },
+  {
+    "label": "strapped to center frame with Velcro",
+    "source": "battery_pack",
+    "target": "main_chassis_rails"
+  }
+]
